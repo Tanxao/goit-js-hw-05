@@ -1,22 +1,18 @@
 `use strict`
 
-const getTotalBalanceByGender = (users, gender) => {
-  const totalBalance = users
-    .filter(user => user.gender === gender) 
-    .reduce((accumulator, user) => accumulator + user.balance, 0); 
+const getTotalBalanceByGender = (users, gender) =>
+  users
+    .filter(user => user.gender === gender)
+    .reduce((totalBalance, user) => totalBalance + user.balance, 0);
 
-  return totalBalance; 
-};
-
-const allUsers = [
+const allUser = [
   {
     name: "Moore Hensley",
     gender: "male",
     balance: 2811
   },
   {
-    name: "Sharlene Bush",
-    gender: "female",
+    name: "Sharlene Bush",    gender: "female",
     balance: 3821
   },
   {
@@ -46,6 +42,6 @@ const allUsers = [
   }
 ];
 
-console.log(getTotalBalanceByGender(allUsers, "male")); // 12053
+console.log(getTotalBalanceByGender(allUser, "male")); // 12053
 
-console.log(getTotalBalanceByGender(allUsers, "female")); // 8863
+console.log(getTotalBalanceByGender(allUser, "female")); // 8863
